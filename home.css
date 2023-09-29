@@ -1,0 +1,733 @@
+/* Reset some default styles */
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #121212;
+}
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#mainpage{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color:#000000;
+}
+/* ----------------------------------------------------------intro video ------------------------------------ */
+#intro-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 9999; /* Ensure the video is on top of other elements */
+}
+
+/* -----------------------------------------navbar styling--------------------------------------------- */
+.navbar {
+    background-color:#000000; /* Dark background color */
+    color: white; /* Text color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.navbar-logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar-links li {
+    margin-right: 20px;
+}
+
+.navbar-links a:hover {
+    color: #777; /* Hover color */
+}
+
+.navbar-links a {
+    font-weight: normal;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-button {
+    margin-left: 20px;
+    padding: 10px 20px;
+    background-color: #222; /* Dark button background color */
+    color: white;
+    border-color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition-delay: 0.2s;
+}
+
+.navbar-button:hover {
+    background-color: #ff7a93; /* Button hover color */
+    border-color: #ff7a93;
+}
+/* ------------------------------------------------------------ profile card ------------------------------------------------------------- */
+#prcard{
+    background-color:#222; 
+    padding: 20px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    border-radius: 20px;
+}
+
+#prpic {
+    height: 390px;
+    border-radius: 5px;
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+#upd {
+    background-color: crimson;
+    color: white;
+    border-color: black;
+}
+
+#close,
+#closeupd,
+#closechng {
+    background-color:#222;
+    font-weight: bold;
+    color:white;
+    border: 1px solid black;
+    border-color: black;
+}
+#closepr{
+    background-color:#222;
+    font-weight: bold;
+    color:white;
+    border: 1px solid black;
+    border-color: black;
+}
+
+#chng {
+    background-color: crimson;
+    border-color: black;
+    color: white;
+}
+#updpr{
+    background-color: crimson;
+    border-color: black;
+    color: white;
+}
+
+/* Hover Styles */
+#upd:hover {
+    background-color:white;
+    border-color: #222;
+    color: black;
+}
+
+#close:hover,
+#closeupd:hover,
+#closechng:hover {
+    background-color:white;
+    border-color: #222;
+    color:black;
+}
+#closepr:hover{
+    background-color:white;
+    border-color: #222;
+    color:black;
+}
+
+#chng:hover {
+    background-color:white;
+    border-color: #222;
+    color:black;
+}
+#updpr :hover{
+    background-color:white;
+    border-color: #222;
+    color:black;
+}
+
+#name {
+    height: 40px;
+    width: auto;
+    object-fit: fill;
+    border: solid;
+    border-color:#222;
+    border-width: 1px;
+    border-radius: 100%;
+    cursor: pointer;
+    filter: opacity(0.7);
+}
+
+/* ---------------------------------------------- Playback Player ---------------------------------------------------------------- */
+.fixed-player {
+    position: fixed;
+    margin-left: 20px;
+    left: 0;
+    width: 25%;
+    height: 90%;
+    background-color: #0a0a0a;
+    color: #fff; 
+    margin-top: 10px;
+    padding: 20px;
+    z-index: 0;
+    overflow: hidden;
+}
+
+#song-name {
+    font-weight: lighter;
+    margin-bottom: 10px;
+    color:#fff;
+}
+
+#song-player audio {
+    width: 100%;
+}
+#pbimg                                                /*   image in the music player  */
+{
+    width: 100%;
+    height: auto;
+}
+
+#playback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#playback div {
+    display: inline-flex;
+    height: 40px;
+    width: 40px;
+    background-color:white; 
+    color:black;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+#playback div:nth-child(2) {
+    height: 60px;
+    width: 60px;
+}
+
+#playback div:hover {
+    background-color: #888;
+}
+
+#playback2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#playback2 div {
+    display: inline-flex;
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 45px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+#playback2 div:hover {
+    color: #777;
+}
+.time-container {
+    display: flex;
+    justify-content: space-between; /* Creates space between the two spans */
+}
+
+.right-corner {
+    order: 1; /* Pushes this span to the right */
+}
+
+.left-corner {
+    order: 2; /* Pushes this span to the left */
+}
+/* ----------------------------------------------------------------------------- singer_area ------------------------------------------- */
+
+#lyrics_player {
+    position: fixed;
+    margin-left: 20px;
+    margin-top: 10px;
+    right: 0;
+    width: 17%;
+    height: 35%;
+    margin-right: 10px;
+    background-color: #0a0a0a; 
+    color: #fff; 
+    padding: 3px;
+    overflow: hidden;
+}
+
+#lyrics_area {
+    white-space: pre-line;
+    text-align: center;
+    margin-top: 2%  ;
+    font-size: 14px;
+    color: #666;
+    height: 280px;
+    width: 100%; 
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#song_player,
+#nav,
+#mainhome,
+#suggested_info,
+#lyrics_player
+{
+    transition: filter 0.5s ease-in-out; 
+}
+
+/* ------------------------------------------------------------ suggested song ------------------------------------------------------ */
+
+#suggested_info {
+    position: fixed;
+    margin-left: 20px;
+    right: 0;
+    top: 44.5%;
+    width: 17%;
+    height: 53%;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    background-color: #0a0a0a; /* Dark background color */
+    color: #fff; /* Text color */
+    padding: 20px;
+    overflow: auto; /* this will add scrollbar if overflow */
+    z-index: 0;
+}
+
+#recc {
+    width: 100%;
+    height: 45px;
+}
+
+#suggested_info::-webkit-scrollbar,
+#lyrics_area::-webkit-scrollbar {
+    width: 6px;
+}
+#suggested_info::-webkit-scrollbar-track,
+#lyrics_area::-webkit-scrollbar-track{
+    background-color:#222;
+}
+#suggested_info::-webkit-scrollbar-thumb,
+#lyrics_area::-webkit-scrollbar-thumb{
+    background-color: #666;
+}
+
+#suggested_info div {
+    margin-top: 10px;
+}
+
+/* --------------------------------------------------------------- songdiv-------------------------------------------------------- */
+#songdiv {
+    width: 100%;
+    height: 45px;
+    background-color: #121212; 
+    color: #999;
+    overflow: hidden; 
+}
+#songdiv img{
+    height: 39px;
+    width:39px;
+    object-fit:cover;
+    margin:3px 3px;
+}
+
+/* ---------------------------------------------------------- size ---------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar-right {
+        margin-left: auto;
+    }
+}
+#work{
+        background-color: #777;
+    }
+
+/* -------------------------------------------------- main ----------------------------------------------------------------------------- */
+
+
+
+#mainhome {
+    z-index: 0;
+    height: 90%;
+    width: 55%;
+    background-color: #0a0a0a;
+    left: 26.8%;
+    position: fixed;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column; /* Stack the child elements vertically */
+    align-items: center; /* Center child elements horizontally */
+}
+
+.links {
+    background-color: #121212;
+    color: #ccc;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px 30px; 
+    width: 100%; 
+}
+
+.links a {
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    
+}
+#your_music{
+    color: crimson;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    color: #ccc;
+    background-color: #121212;
+}
+
+.dropbtn:hover {
+    color: #ccc;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #222;
+    min-width: 160px;
+    z-index: 999;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #ccc;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    color: #ccc;
+}
+
+
+/* -------------------------------ALl-------------------------------------------------------------------------------------- */
+.recent {
+    margin-top: 10px;
+    height: auto;
+    width: 100%;
+    background-color:transparent;
+}
+
+.heading{
+    height: auto;
+    width: 100%;
+}
+
+.recent2{
+    margin-top: -10px;
+    height: 180px;
+    width: 100%;
+    display: flex;
+    background-color: transparent;
+    overflow-x: auto; /* Add horizontal scroll if necessary */
+    overflow-y: hidden; /* Hide vertical scroll if it appears */
+    flex-wrap: nowrap; /* Allow items to wrap to the next line */
+    justify-content: flex-start; /* Align items to the left */
+    align-content: flex-start; /* Align items to the top */
+}
+
+.recent2::-webkit-scrollbar {
+    height: 4px;
+}
+.recent2::-webkit-scrollbar-track{
+    background-color:#222;
+}
+.recent2::-webkit-scrollbar-thumb{
+    background-color:#666;
+}
+.heading{
+    color: #ccc;
+}
+
+.recentbox {
+    margin: 10px;
+    height: 140px;
+    width: 140px;
+    background-color: white;
+    flex-shrink: 0; /* Prevent items from shrinking */
+    cursor: pointer;
+    color: white;
+    font-size: 12px;
+}
+
+.recentbox img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.art{
+    margin: 10px;
+    height: 135px;
+    width: 135px;
+    background-color: white;
+    flex-shrink: 0;
+    border-radius: 10%;
+    cursor: pointer;
+    color: white;
+    font-size: 12px;
+}
+
+.art img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+/* ------------------------------------------p2 */
+.funct {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center child elements horizontally */
+    height: 90%;
+    width: 100%; /* Take up the full width of the container */
+    overflow: hidden;
+    background-color: #0a0a0a;
+}
+
+
+.funct section{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 94%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.funct section::-webkit-scrollbar{
+    width: 6px;
+    cursor: pointer;
+}
+.funct section::-webkit-scrollbar-track{
+    background-color:#222;
+}
+.funct section::-webkit-scrollbar-thumb{
+    background-color:#666;
+}
+
+.songfunct{
+    z-index: 15;
+    background-color: #0a0a0a;
+}
+.searchfunct{
+    z-index: 14;
+    background-color: #0a0a0a;   
+}
+#search-container input{
+    border: none;
+    outline: none;
+    background-color: rgba(29, 29, 29, 0.5); /* Set your desired transparent background color */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px; /* Add some border radius for rounded corners */
+    width: 98%; /* Set your desired width */
+    margin-top: 10px;
+}
+
+#search-container input:hover,
+#search-container input:focus{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* -------------------------------------------------------------------------------------------- */
+.arthin{
+    z-index: 13;
+    background-color: #0a0a0a;
+}
+.biography-container {
+    border: 1px solid #222;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    height: 200px;
+    width: 98%; /* Adjust the width as needed */
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.biography-container:hover {
+    background-color: #000000;
+}
+
+.biography-image {
+    height: 100%;
+    width: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+}
+
+.biography-info {
+    margin-top: 10px;
+    font-size: 1rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    color: #fff;
+    font-weight: normal;
+
+}
+
+.biography-history {
+    white-space: pre-line;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    overflow-y: auto;
+    padding-left: 10px;
+    color:#777;
+    width: 700PX;
+    
+}
+.biography-history::-webkit-scrollbar {
+    width: 2px;
+    margin-left: 3px;
+}
+.biography-history::-webkit-scrollbar-track{
+    background-color:#222;
+}
+.biography-history::-webkit-scrollbar-thumb{
+    background-color: #666;
+}
+/* ------------------------------------------------------------------------------------------------ */
+.funct section h3{
+    padding-top: 10px;
+    color:white;
+}
+.arteng{
+    z-index: 12;
+    background-color: #0a0a0a;
+}
+
+.artguj{
+    z-index: 11;
+    background-color: #0a0a0a;
+}
+.artkpop{
+    z-index: 10;
+    background-color: #0a0a0a;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+.genresparty{
+    z-index: 9;
+    background-color: #0a0a0a;
+}
+
+.genresdance{
+    z-index: 8;
+    background-color: #0a0a0a;
+}
+
+.genresbollywood{
+    z-index: 7;
+    background-color: #0a0a0a;
+}
+
+.genresromantic{
+    z-index: 6;
+    background-color: #0a0a0a;
+}
+
+.genresbhakti{
+    z-index: 5;
+    background-color: #0a0a0a;
+}
+
+.genreslofi{
+    z-index: 4;
+    background-color: #0a0a0a;
+}
+/* -------------------------------------------------------------------------------------------------------- */
+.playlistfunct{
+    z-index: 3;
+    background-color: #0a0a0a;
+}
+
+.likedfunct{
+    z-index: 2;
+    background-color: #0a0a0a;
+}
+
+.queuefunct{
+    z-index: 1;
+    background-color: #0a0a0a; 
+}
+
+/* ---------------------------------------------------------------------------- */
+
+.your_music_class{
+    z-index: -1;
+    background-color: #0a0a0a; 
+}
+
+.upload_song_class{
+    z-index:-2;
+    background-color: #0a0a0a; 
+}
