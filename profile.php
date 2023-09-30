@@ -91,12 +91,6 @@ if (!isset($_SESSION["sessionuser"])) {
             text-decoration: none;
         }
 
-
-
-
-
-
-        
         /* Style for the right corner buttons */
         .navbar-right {
             display: flex;
