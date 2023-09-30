@@ -73,7 +73,7 @@ if (!isset($_SESSION["sessionuser"])) {
                 </form>
             </div>
         </nav>
-        <div id="prof"  style="height: 50vh; width: 40vw; position: absolute; top: 20%; left: 30%; z-index: 5; padding: 10px; display: none">
+        <div id="prof" style="height: 50vh; width: 40vw; position: absolute; top: 20%; left: 30%; z-index: 5; padding: 10px; display: none">
             <button type="submit" class="btn btn-primary" id="close">X</button>
             <div class="container mt-4" id="prcard">
 
@@ -90,11 +90,11 @@ if (!isset($_SESSION["sessionuser"])) {
                                 <label class="input" style="font-weight: bold;color:white"><?php echo $_SESSION["uname"]; ?></label>
                             </div>
                             <div class="form-group">
-                                <label  class="detail" style="color: #777;">full-name :</label><br>
+                                <label class="detail" style="color: #777;">full-name :</label><br>
                                 <label class="input" style="font-weight: bold;color:white" id="prfname"><?php echo $_SESSION["fname"]; ?></label>
                             </div>
                             <div class="form-group">
-                                <label  class="detail" style="color: #777;">email :</label><br>
+                                <label class="detail" style="color: #777;">email :</label><br>
                                 <label class="input" style="font-weight: bold;color:white"><?php echo $_SESSION["email"]; ?></label>
                             </div>
 
@@ -118,7 +118,7 @@ if (!isset($_SESSION["sessionuser"])) {
                         <div class="form-group">
                             <h4 style="color: crimson; font-weight:bolder;text-align:center">Update Profile</h4>
                             <br>
-                            <label  class="detail" style="color: #777;">full-name :</label><br>
+                            <label class="detail" style="color: #777;">full-name :</label><br>
                             <input type="text" id="fullname" name="fname" placeholder="Update Full Name" style="width: 100%;">
                         </div>
                         <div class="text-center">
@@ -141,11 +141,11 @@ if (!isset($_SESSION["sessionuser"])) {
                             <div class="form-group">
                                 <h4 style="color: crimson; font-weight:bolder">Change Password</h4>
                                 <br>
-                                <label  class="detail" style="color: #777;">Enter New Password :</label><br>
+                                <label class="detail" style="color: #777;">Enter New Password :</label><br>
                                 <input type="password" name=" password" placeholder="New Password" style="width: 100%;">
                                 <br>
                                 <br>
-                                <label  class="detail" style="color: #777;">Enter New password Again :</label><br>
+                                <label class="detail" style="color: #777;">Enter New password Again :</label><br>
                                 <input type="password" name="confirm_password" placeholder="Re-enter Password" style="width: 100%;">
                             </div>
                             <div class="text-center">
@@ -169,23 +169,23 @@ if (!isset($_SESSION["sessionuser"])) {
                             <h1 style="font-size: 20px;text-align:center;font-weight:bold; margin-bottom: 10px;">Song Upload Form</h2>
                                 <hr>
 
-                                <label  style="margin-bottom: 5px;">Song Title:</label>
+                                <label style="margin-bottom: 5px;">Song Title:</label>
                                 <input type="text" id="songTitle" name="songTitle" required style="padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px;">
 
-                                <label  style="margin-bottom: 5px;">Artist Name:</label>
+                                <label style="margin-bottom: 5px;">Artist Name:</label>
                                 <input type="text" id="artistName" name="artistName" required style="padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px;">
 
-                                <label  style="margin-bottom: 5px;">Song Genre:</label>
+                                <label style="margin-bottom: 5px;">Song Genre:</label>
                                 <select id="songGenre" name="songGenre" required style="padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px;">
                                     <option value="Party">Party Song</option>
                                     <option value="Dance">Dance Song</option>
                                     <option value="Romantic">Romantic Song</option>
                                     <option value="Lofi">Lofi Song</option>
                                     <option value="Bhakti">Bhakti Song</option>
-                                    
+
                                 </select>
 
-                                <label  style="margin-bottom: 5px;">Song Language:</label>
+                                <label style="margin-bottom: 5px;">Song Language:</label>
                                 <select id="songLanguage" name="songLanguage" required style="padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px;">
                                     <option value="English">English</option>
                                     <option value="Hindi">Hindi</option>
@@ -194,13 +194,13 @@ if (!isset($_SESSION["sessionuser"])) {
                                     <!-- Add more language options as needed -->
                                 </select>
 
-                                <label  style="margin-bottom: 5px;">Song Profile Picture:</label>
+                                <label style="margin-bottom: 5px;">Song Profile Picture:</label>
                                 <input type="file" id="songImage" name="songImage" accept="image/*" required style="padding: 2px; margin-bottom: 10px;">
 
-                                <label  style="margin-bottom: 5px;">Upload Song (MP3):</label>
+                                <label style="margin-bottom: 5px;">Upload Song (MP3):</label>
                                 <input type="file" id="songFile" name="songFile" accept=".mp3" required style="padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px;">
 
-                                <label  style="margin-bottom: 5px;">Album Name:</label>
+                                <label style="margin-bottom: 5px;">Album Name:</label>
                                 <input type="text" id="albumName" name="albumName" style="padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px;">
 
                                 <!-- Add additional song details fields here -->
@@ -265,12 +265,12 @@ if (!isset($_SESSION["sessionuser"])) {
         <div id="mainhome">
 
             <div class="links"> <!-- Add the class name here -->
-                <a id="all" onclick="show_all()" >All</a>
+                <a id="all" onclick="show_all()">All</a>
                 <a id="search" onclick="show_search()">Search</a>
                 <div class="dropdown">
                     <a class="dropbtn">Artist </a>
                     <div class="dropdown-content">
-                        <a id="hindi" onclick=" show_hindi_artist()" >Top Hindi Artist</a>
+                        <a id="hindi" onclick=" show_hindi_artist()">Top Hindi Artist</a>
                         <a id="eng" onclick="show_english_artist()">Top English Artist</a>
                         <a id="guj" onclick="show_gujarati_artist()">Top Gujarati Artist</a>
                         <a id="kpop" onclick="show_korean_artist()">Top K-POP Artist</a>
@@ -293,7 +293,7 @@ if (!isset($_SESSION["sessionuser"])) {
                     echo "<a id='your_music' style='color:crimson;font-weight:bold' onclick='show_your_music()'>Your Music</a>";
                     echo "<a id='music_upload' style='color:crimson;font-weight:bold' onclick='show_music_upload_form()'>Upload Song</a>";
                 }
-                ?> 
+                ?>
             </div>
             <div class="funct">
                 <section class="songfunct">
@@ -475,7 +475,7 @@ if (!isset($_SESSION["sessionuser"])) {
                     if ($updateResult) {
 
                         while ($row = mysqli_fetch_assoc($updateResult)) {
-                            echo "<div class='biography-container'>";
+                            echo "<div class='biography-container' onclick='singer_click(\"" . $row['uname'] . "\")'>";    //   "" ni andar pachu  "" use kerva ---------->      \"   "xyz"   "\
                             echo "<img class='biography-image' src='" . $row['img'] . "' alt='Singer Image'>";
                             echo "<h2 class='biography-info'>" . $row['uname'] . "</h2>";
                             echo "<div class='biography-history'>";
@@ -541,9 +541,8 @@ if (!isset($_SESSION["sessionuser"])) {
                     $updateResult = mysqli_query($connection, $query);
 
                     if ($updateResult) {
-
                         while ($row = mysqli_fetch_assoc($updateResult)) {
-                            echo "<div class='biography-container'>";
+                            echo "<div class='biography-container' onclick='singer_click(\"" . $row['uname'] .",".$row['img']. "\")'>";
                             echo "<img class='biography-image' src='" . $row['img'] . "' alt='Singer Image'>";
                             echo "<h2 class='biography-info'>" . $row['uname'] . "</h2>";
                             echo "<div class='biography-history'>";
@@ -594,7 +593,7 @@ if (!isset($_SESSION["sessionuser"])) {
                         </div>
                     </div>
                     <h3>Top Gujarati Artist</h3>
-                    
+
                 </section>
                 <section class="artkpop">
                     <div class="container mt-2" id="slider" style="width: 100;height:auto; margin:0;padding:0;">
@@ -636,7 +635,7 @@ if (!isset($_SESSION["sessionuser"])) {
                         </div>
                     </div>
                     <h3>Top K-POP Artist</h3>
-                    
+
                 </section>
 
                 <!-- ------------------------------------------------gerne ------------------------- -->
@@ -675,22 +674,28 @@ if (!isset($_SESSION["sessionuser"])) {
                     <h1>this is Your Music</h1>
                 </section>
 
+                <section class="artist_section">
+                    <img src="" alt="" id="artist_img">
+                    <br>
+                    <h1> Artist Name</h1>
+                </section>
+
                 <section class="upload_song_class" style="background-color: #0a0a0a;  color: white;">
                     <h1 style="font-weight: bold; color: crimson; font-size: 24px; padding-top: 20px;">Upload song</h1>
                     <form style="display: flex; flex-direction: column; padding: 20px; width: 600px;">
                         <!-- Song Name -->
-                        <label  style="color: white; font-size: 16px;">Song Name:</label>
+                        <label style="color: white; font-size: 16px;">Song Name:</label>
                         <input type="text" id="song_name" name="song_name" required style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;">
 
-                        <label  style="color: white; font-size: 16px;">mp3 File:</label>
+                        <label style="color: white; font-size: 16px;">mp3 File:</label>
                         <input type="file" id="song_file" name="song_file" accept="image/*" required style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;">
 
                         <!-- Song Image -->
-                        <label  style="color: white; font-size: 16px;">Song Image:</label>
+                        <label style="color: white; font-size: 16px;">Song Image:</label>
                         <input type="file" id="song_image" name="song_image" accept="image/*" required style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;">
 
                         <!-- Song Language Dropdown -->
-                        <label  style="color: white; font-size: 16px;">Song Language:</label>
+                        <label style="color: white; font-size: 16px;">Song Language:</label>
                         <select id="song_language" name="song_language" required style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;">
                             <option value="hindi">Hindi</option>
                             <option value="english">English</option>
@@ -699,7 +704,7 @@ if (!isset($_SESSION["sessionuser"])) {
                         </select>
 
                         <!-- Song Genre Dropdown -->
-                        <label  style="color: white; font-size: 16px;">Song Genre:</label>
+                        <label style="color: white; font-size: 16px;">Song Genre:</label>
                         <select id="song_genre" name="song_genre" required style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;">
                             <option value="party">Party</option>
                             <option value="dance">Dance</option>
@@ -710,11 +715,11 @@ if (!isset($_SESSION["sessionuser"])) {
                         </select>
 
                         <!-- Song Description -->
-                        <label  style="color: white; font-size: 16px;">Song Description:</label>
+                        <label style="color: white; font-size: 16px;">Song Description:</label>
                         <textarea id="song_description" name="song_description" rows="4" style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;"></textarea>
 
                         <!-- Song Lyrics -->
-                        <label  style="color: white; font-size: 16px;">Song Lyrics:</label>
+                        <label style="color: white; font-size: 16px;">Song Lyrics:</label>
                         <textarea id="song_lyrics" name="song_lyrics" rows="6" style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;"></textarea>
 
                         <!-- Submit Button -->
@@ -796,10 +801,9 @@ if (!isset($_SESSION["sessionuser"])) {
     <script src="profile_picture_click.js"></script>
     <script src="update_profile.js"></script>
     <script src="song_play.js"></script>
+    <script src="singer_area_click.js"></script>
     <script>
-        window.onload = function() {
-            document.getElementById("song").pause();
-        }
+
     </script>
 </body>
 
