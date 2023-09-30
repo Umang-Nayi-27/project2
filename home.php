@@ -68,12 +68,12 @@ if (!isset($_SESSION["sessionuser"])) {
             <div class="navbar-right">
                 <form method="post" action="">
 
-                    <img src="<?php echo $_SESSION["path"] ?>" alt="" id="name">
+                    <img src="<?php echo $_SESSION["path"] ?>" alt="" id="name" for="Profile">
                     <input type="submit" class="navbar-button" name="logout" value="Logout">
                 </form>
             </div>
         </nav>
-        <div id="prof" style="height: 50vh; width: 40vw; position: absolute; top: 20%; left: 30%; z-index: 5; padding: 10px; display: none">
+        <div id="prof"  style="height: 50vh; width: 40vw; position: absolute; top: 20%; left: 30%; z-index: 5; padding: 10px; display: none">
             <button type="submit" class="btn btn-primary" id="close">X</button>
             <div class="container mt-4" id="prcard">
 
@@ -86,15 +86,15 @@ if (!isset($_SESSION["sessionuser"])) {
                         <!-- User Details (right side) -->
                         <form method="post">
                             <div class="form-group">
-                                <label for="username" class="detail" style="color: #777;">user-name :</label><br>
+                                <label class="detail" style="color: #777;">user-name :</label><br>
                                 <label class="input" style="font-weight: bold;color:white"><?php echo $_SESSION["uname"]; ?></label>
                             </div>
                             <div class="form-group">
-                                <label for="fullname" class="detail" style="color: #777;">full-name :</label><br>
+                                <label  class="detail" style="color: #777;">full-name :</label><br>
                                 <label class="input" style="font-weight: bold;color:white" id="prfname"><?php echo $_SESSION["fname"]; ?></label>
                             </div>
                             <div class="form-group">
-                                <label for="email" class="detail" style="color: #777;">email :</label><br>
+                                <label  class="detail" style="color: #777;">email :</label><br>
                                 <label class="input" style="font-weight: bold;color:white"><?php echo $_SESSION["email"]; ?></label>
                             </div>
 
@@ -118,7 +118,7 @@ if (!isset($_SESSION["sessionuser"])) {
                         <div class="form-group">
                             <h4 style="color: crimson; font-weight:bolder;text-align:center">Update Profile</h4>
                             <br>
-                            <label for="username" class="detail" style="color: #777;">full-name :</label><br>
+                            <label  class="detail" style="color: #777;">full-name :</label><br>
                             <input type="text" id="fullname" name="fname" placeholder="Update Full Name" style="width: 100%;">
                         </div>
                         <div class="text-center">
@@ -141,11 +141,11 @@ if (!isset($_SESSION["sessionuser"])) {
                             <div class="form-group">
                                 <h4 style="color: crimson; font-weight:bolder">Change Password</h4>
                                 <br>
-                                <label for="username" class="detail" style="color: #777;">Enter New Password :</label><br>
+                                <label  class="detail" style="color: #777;">Enter New Password :</label><br>
                                 <input type="password" name=" password" placeholder="New Password" style="width: 100%;">
                                 <br>
                                 <br>
-                                <label for="username" class="detail" style="color: #777;">Enter New password Again :</label><br>
+                                <label  class="detail" style="color: #777;">Enter New password Again :</label><br>
                                 <input type="password" name="confirm_password" placeholder="Re-enter Password" style="width: 100%;">
                             </div>
                             <div class="text-center">
@@ -169,23 +169,23 @@ if (!isset($_SESSION["sessionuser"])) {
                             <h1 style="font-size: 20px;text-align:center;font-weight:bold; margin-bottom: 10px;">Song Upload Form</h2>
                                 <hr>
 
-                                <label for="songTitle" style="margin-bottom: 5px;">Song Title:</label>
+                                <label  style="margin-bottom: 5px;">Song Title:</label>
                                 <input type="text" id="songTitle" name="songTitle" required style="padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px;">
 
-                                <label for="artistName" style="margin-bottom: 5px;">Artist Name:</label>
+                                <label  style="margin-bottom: 5px;">Artist Name:</label>
                                 <input type="text" id="artistName" name="artistName" required style="padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px;">
 
-                                <label for="songGenre" style="margin-bottom: 5px;">Song Genre:</label>
+                                <label  style="margin-bottom: 5px;">Song Genre:</label>
                                 <select id="songGenre" name="songGenre" required style="padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px;">
                                     <option value="Party">Party Song</option>
                                     <option value="Dance">Dance Song</option>
                                     <option value="Romantic">Romantic Song</option>
                                     <option value="Lofi">Lofi Song</option>
                                     <option value="Bhakti">Bhakti Song</option>
-                                    <option value="90s">90's era</option>
+                                    
                                 </select>
 
-                                <label for="songLanguage" style="margin-bottom: 5px;">Song Language:</label>
+                                <label  style="margin-bottom: 5px;">Song Language:</label>
                                 <select id="songLanguage" name="songLanguage" required style="padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px;">
                                     <option value="English">English</option>
                                     <option value="Hindi">Hindi</option>
@@ -194,13 +194,13 @@ if (!isset($_SESSION["sessionuser"])) {
                                     <!-- Add more language options as needed -->
                                 </select>
 
-                                <label for="songImage" style="margin-bottom: 5px;">Song Profile Picture:</label>
+                                <label  style="margin-bottom: 5px;">Song Profile Picture:</label>
                                 <input type="file" id="songImage" name="songImage" accept="image/*" required style="padding: 2px; margin-bottom: 10px;">
 
-                                <label for="songFile" style="margin-bottom: 5px;">Upload Song (MP3):</label>
+                                <label  style="margin-bottom: 5px;">Upload Song (MP3):</label>
                                 <input type="file" id="songFile" name="songFile" accept=".mp3" required style="padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px;">
 
-                                <label for="albumName" style="margin-bottom: 5px;">Album Name:</label>
+                                <label  style="margin-bottom: 5px;">Album Name:</label>
                                 <input type="text" id="albumName" name="albumName" style="padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px;">
 
                                 <!-- Add additional song details fields here -->
@@ -265,36 +265,35 @@ if (!isset($_SESSION["sessionuser"])) {
         <div id="mainhome">
 
             <div class="links"> <!-- Add the class name here -->
-                <a id="all">All</a>
+                <a id="all" onclick="show_all()" >All</a>
                 <a id="search" onclick="show_search()">Search</a>
                 <div class="dropdown">
                     <a class="dropbtn">Artist </a>
                     <div class="dropdown-content">
-                        <a id="hindi">Top Hindi Artist</a>
-                        <a id="eng">Top English Artist</a>
-                        <a id="guj">Top Gujarati Artist</a>
-                        <a id="kpop">Top K-POP Artist</a>
+                        <a id="hindi" onclick=" show_hindi_artist()" >Top Hindi Artist</a>
+                        <a id="eng" onclick="show_english_artist()">Top English Artist</a>
+                        <a id="guj" onclick="show_gujarati_artist()">Top Gujarati Artist</a>
+                        <a id="kpop" onclick="show_korean_artist()">Top K-POP Artist</a>
                     </div>
                 </div>
                 <div class="dropdown">
                     <a class="dropbtn">Mood & Genre </a>
                     <div class="dropdown-content">
-                        <a id="party">Party Song</a>
-                        <a id="dance">Dance Song</a>
-                        <a id="romantic">Romantic Song</a>
-                        <a id="lofi">Lofi SOng</a>
-                        <a id="bhakti">Bhakti Song</a>
-                        <a id="bollywood">90's era</a>
+                        <a id="party" onclick="show_party_song()">Party Song</a>
+                        <a id="dance" onclick="show_dance_song()">Dance Song</a>
+                        <a id="romantic" onclick="show_romantic_song()">Romantic Song</a>
+                        <a id="lofi" onclick="show_lofi_song()">Lofi SOng</a>
+                        <a id="bhakti" onclick="show_Bhakti_song()">Bhakti Song</a>
                     </div>
                 </div>
-                <a id="plist">Playlist</a>
-                <a id="linked">liked Song</a>
-                <!-- <?php
+                <a id="plist" onclick="show_playlist()">Playlist</a>
+                <a id="linked" onclick="show_liked_Song()">liked Song</a>
+                <?php
                 if ($_SESSION['role'] == 2) {
-                    echo "<a id='your_music' style='color:crimson;font-weight:bold'>Your Music</a>";
-                    echo "<a id='music_upload' onclick='' style='color:crimson;font-weight:bold'>Upload Song</a>";
+                    echo "<a id='your_music' style='color:crimson;font-weight:bold' onclick='show_your_music()'>Your Music</a>";
+                    echo "<a id='music_upload' style='color:crimson;font-weight:bold' onclick='show_music_upload_form()'>Upload Song</a>";
                 }
-                ?> -->
+                ?> 
             </div>
             <div class="funct">
                 <section class="songfunct">
@@ -458,10 +457,6 @@ if (!isset($_SESSION["sessionuser"])) {
                         </div>
                     </div>
                     <h3>Top Hindi Artist</h3>
-                    <div class="" id="search-container" style="width: 100%;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" class="search-input" placeholder="Search Artist">
-                    </div>
-                    <br>
                     <br>
                     <?php
                     $connection = mysqli_connect("localhost", "root", "", "demo");
@@ -481,7 +476,7 @@ if (!isset($_SESSION["sessionuser"])) {
 
                         while ($row = mysqli_fetch_assoc($updateResult)) {
                             echo "<div class='biography-container'>";
-                            echo "<img class='biography-image' src='img/" . $row['img'] . "' alt='Singer Image'>";
+                            echo "<img class='biography-image' src='" . $row['img'] . "' alt='Singer Image'>";
                             echo "<h2 class='biography-info'>" . $row['uname'] . "</h2>";
                             echo "<div class='biography-history'>";
                             echo $row['a_detail'];
@@ -633,10 +628,6 @@ if (!isset($_SESSION["sessionuser"])) {
 
                     <h1>this is genresdance</h1>
                 </section>
-                <section class="genresbollywood">
-
-                    <h1>this is genresbollywood</h1>
-                </section>
                 <section class="genresromantic">
 
                     <h1>this is genresromantic</h1>
@@ -659,10 +650,6 @@ if (!isset($_SESSION["sessionuser"])) {
                     <h1>this is liked song</h1>
                 </section>
 
-                <section class="queuefunct">
-                    <h1>this is queue</h1>
-                </section>
-
                 <section class="your_music_class">
 
                     <h1>this is Your Music</h1>
@@ -672,18 +659,18 @@ if (!isset($_SESSION["sessionuser"])) {
                     <h1 style="font-weight: bold; color: crimson; font-size: 24px; padding-top: 20px;">Upload song</h1>
                     <form style="display: flex; flex-direction: column; padding: 20px; width: 600px;">
                         <!-- Song Name -->
-                        <label for="song_name" style="color: white; font-size: 16px;">Song Name:</label>
+                        <label  style="color: white; font-size: 16px;">Song Name:</label>
                         <input type="text" id="song_name" name="song_name" required style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;">
 
-                        <label for="song_file" style="color: white; font-size: 16px;">mp3 File:</label>
+                        <label  style="color: white; font-size: 16px;">mp3 File:</label>
                         <input type="file" id="song_file" name="song_file" accept="image/*" required style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;">
 
                         <!-- Song Image -->
-                        <label for="song_image" style="color: white; font-size: 16px;">Song Image:</label>
+                        <label  style="color: white; font-size: 16px;">Song Image:</label>
                         <input type="file" id="song_image" name="song_image" accept="image/*" required style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;">
 
                         <!-- Song Language Dropdown -->
-                        <label for="song_language" style="color: white; font-size: 16px;">Song Language:</label>
+                        <label  style="color: white; font-size: 16px;">Song Language:</label>
                         <select id="song_language" name="song_language" required style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;">
                             <option value="hindi">Hindi</option>
                             <option value="english">English</option>
@@ -692,23 +679,22 @@ if (!isset($_SESSION["sessionuser"])) {
                         </select>
 
                         <!-- Song Genre Dropdown -->
-                        <label for="song_genre" style="color: white; font-size: 16px;">Song Genre:</label>
+                        <label  style="color: white; font-size: 16px;">Song Genre:</label>
                         <select id="song_genre" name="song_genre" required style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;">
                             <option value="party">Party</option>
                             <option value="dance">Dance</option>
                             <option value="romantic">Romantic</option>
                             <option value="bhakti">Bhakti</option>
-                            <option value="90s">90's</option>
                             <option value="lofi">Lofi</option>
                             <option value="other">Other</option>
                         </select>
 
                         <!-- Song Description -->
-                        <label for="song_description" style="color: white; font-size: 16px;">Song Description:</label>
+                        <label  style="color: white; font-size: 16px;">Song Description:</label>
                         <textarea id="song_description" name="song_description" rows="4" style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;"></textarea>
 
                         <!-- Song Lyrics -->
-                        <label for="song_lyrics" style="color: white; font-size: 16px;">Song Lyrics:</label>
+                        <label  style="color: white; font-size: 16px;">Song Lyrics:</label>
                         <textarea id="song_lyrics" name="song_lyrics" rows="6" style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;"></textarea>
 
                         <!-- Submit Button -->
