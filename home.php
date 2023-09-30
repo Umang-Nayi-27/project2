@@ -468,7 +468,7 @@ if (!isset($_SESSION["sessionuser"])) {
                     $query = "SELECT demo_reg.uname, demo_reg.img, artist_table.a_detail
                                 FROM demo_reg
                                 INNER JOIN artist_table ON demo_reg.uname = artist_table.a_name
-                                WHERE demo_reg.role = 2";
+                                WHERE demo_reg.role = 2 AND artist_table.language = 'hindi' ";
 
                     $updateResult = mysqli_query($connection, $query);
 
@@ -526,9 +526,33 @@ if (!isset($_SESSION["sessionuser"])) {
                         </div>
                     </div>
                     <h3>Top English Artist</h3>
-                    <div class="" id="search-container" style="width: 100%;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" class="search-input" placeholder="Search Artist">
-                    </div>
+                    <?php
+                    $connection = mysqli_connect("localhost", "root", "", "demo");
+
+                    if ($connection) {
+                    } else {
+                        die("Not connected" . mysqli_connect_error());
+                    }
+                    $query = "SELECT demo_reg.uname, demo_reg.img, artist_table.a_detail
+                                FROM demo_reg
+                                INNER JOIN artist_table ON demo_reg.uname = artist_table.a_name
+                                WHERE demo_reg.role = 2 AND artist_table.language = 'english' ";
+
+                    $updateResult = mysqli_query($connection, $query);
+
+                    if ($updateResult) {
+
+                        while ($row = mysqli_fetch_assoc($updateResult)) {
+                            echo "<div class='biography-container'>";
+                            echo "<img class='biography-image' src='" . $row['img'] . "' alt='Singer Image'>";
+                            echo "<h2 class='biography-info'>" . $row['uname'] . "</h2>";
+                            echo "<div class='biography-history'>";
+                            echo $row['a_detail'];
+                            echo "</div>";
+                            echo "</div>";
+                        }
+                    }
+                    ?>
                 </section>
                 <section class="artguj">
                     <div class="container mt-2" id="slider" style="width: 100;height:auto; margin:0;padding:0;">
@@ -570,9 +594,7 @@ if (!isset($_SESSION["sessionuser"])) {
                         </div>
                     </div>
                     <h3>Top Gujarati Artist</h3>
-                    <div class="" id="search-container" style="width: 100%;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" class="search-input" placeholder="Search Artist">
-                    </div>
+                    
                 </section>
                 <section class="artkpop">
                     <div class="container mt-2" id="slider" style="width: 100;height:auto; margin:0;padding:0;">
@@ -614,9 +636,7 @@ if (!isset($_SESSION["sessionuser"])) {
                         </div>
                     </div>
                     <h3>Top K-POP Artist</h3>
-                    <div class="" id="search-container" style="width: 100%;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" class="search-input" placeholder="Search Artist">
-                    </div>
+                    
                 </section>
 
                 <!-- ------------------------------------------------gerne ------------------------- -->
