@@ -742,7 +742,13 @@ li {
 
 
  #artist_img{
-    margin: 20px 20px;
-    height: 300px;
+    height: 250px;
     width: auto;
+    border-radius: 30px;
+    margin-top: 150px;
+    box-shadow: 10px 10px 10px #000000 ; /* right side shadow */
+ }
+ #artist_click_name{
+    color: crimson;
+    font-weight: bolder;
  }

@@ -61,7 +61,8 @@ function show(class_name) {
     playlistfunct.style.zIndex = "1";
     likedfunct.style.zIndex = "1";
 
-    if (your_music_class) {
+    if (class_name == "your_music_class" || class_name == "upload_song_class") {
+        console.log(selected_section);
         your_music_class.style.zIndex = "1";
         upload_song_class.style.zIndex = "1";
     }
