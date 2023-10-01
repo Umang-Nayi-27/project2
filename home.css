@@ -742,6 +742,7 @@ li {
 
 
  #artist_img{
-    height: 100px;
+    margin: 20px 20px;
+    height: 300px;
     width: auto;
  }

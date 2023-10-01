@@ -265,33 +265,33 @@ if (!isset($_SESSION["sessionuser"])) {
         <div id="mainhome">
 
             <div class="links"> <!-- Add the class name here -->
-                <a id="all" onclick="show_all()">All</a>
-                <a id="search" onclick="show_search()">Search</a>
+                <a id="all" onclick="show('songfunct')">All</a>
+                <a id="search" onclick="show('searchfunct')">Search</a>
                 <div class="dropdown">
                     <a class="dropbtn">Artist </a>
                     <div class="dropdown-content">
-                        <a id="hindi" onclick=" show_hindi_artist()">Top Hindi Artist</a>
-                        <a id="eng" onclick="show_english_artist()">Top English Artist</a>
-                        <a id="guj" onclick="show_gujarati_artist()">Top Gujarati Artist</a>
-                        <a id="kpop" onclick="show_korean_artist()">Top K-POP Artist</a>
+                        <a id="hindi" onclick=" show('arthin')">Top Hindi Artist</a>
+                        <a id="eng" onclick="show('arteng')">Top English Artist</a>
+                        <a id="guj" onclick="show('artguj')">Top Gujarati Artist</a>
+                        <a id="kpop" onclick="show('artkpop')">Top K-POP Artist</a>
                     </div>
                 </div>
                 <div class="dropdown">
                     <a class="dropbtn">Mood & Genre </a>
                     <div class="dropdown-content">
-                        <a id="party" onclick="show_party_song()">Party Song</a>
-                        <a id="dance" onclick="show_dance_song()">Dance Song</a>
-                        <a id="romantic" onclick="show_romantic_song()">Romantic Song</a>
-                        <a id="lofi" onclick="show_lofi_song()">Lofi SOng</a>
-                        <a id="bhakti" onclick="show_Bhakti_song()">Bhakti Song</a>
+                        <a id="party" onclick="show('genresparty')">Party Song</a>
+                        <a id="dance" onclick="show('genresdance')">Dance Song</a>
+                        <a id="romantic" onclick="show('genresromantic')">Romantic Song</a>
+                        <a id="lofi" onclick="show('genreslofi')">Lofi SOng</a>
+                        <a id="bhakti" onclick="show('genresbhakti')">Bhakti Song</a>
                     </div>
                 </div>
-                <a id="plist" onclick="show_playlist()">Playlist</a>
-                <a id="linked" onclick="show_liked_Song()">liked Song</a>
+                <a id="plist" onclick="show('playlistfunct')">Playlist</a>
+                <a id="linked" onclick="show('likedfunct')">liked Song</a>
                 <?php
                 if ($_SESSION['role'] == 2) {
-                    echo "<a id='your_music' style='color:crimson;font-weight:bold' onclick='show_your_music()'>Your Music</a>";
-                    echo "<a id='music_upload' style='color:crimson;font-weight:bold' onclick='show_music_upload_form()'>Upload Song</a>";
+                    echo "<a id='your_music' style='color:crimson;font-weight:bold' onclick='show('your_music_class')'>Your Music</a>";
+                    echo "<a id='music_upload' style='color:crimson;font-weight:bold' onclick='show('upload_song_class')'>Upload Song</a>";
                 }
                 ?>
             </div>
@@ -475,7 +475,7 @@ if (!isset($_SESSION["sessionuser"])) {
                     if ($updateResult) {
 
                         while ($row = mysqli_fetch_assoc($updateResult)) {
-                            echo "<div class='biography-container' onclick='singer_click(\"" . $row['uname'] . "\")'>";    //   "" ni andar pachu  "" use kerva ---------->      \"   "xyz"   "\
+                            echo "<div class='biography-container' onclick='singer_click(\"" . $row['uname'] . "\" , \"" . $row['img']. "\")'>";    //   "" ni andar pachu  "" use kerva ---------->      \"   "xyz"   "\
                             echo "<img class='biography-image' src='" . $row['img'] . "' alt='Singer Image'>";
                             echo "<h2 class='biography-info'>" . $row['uname'] . "</h2>";
                             echo "<div class='biography-history'>";
@@ -529,8 +529,11 @@ if (!isset($_SESSION["sessionuser"])) {
                     <?php
                     $connection = mysqli_connect("localhost", "root", "", "demo");
 
-                    if ($connection) {
-                    } else {
+                    if ($connection) 
+                    {
+                    } 
+                    else 
+                    {
                         die("Not connected" . mysqli_connect_error());
                     }
                     $query = "SELECT demo_reg.uname, demo_reg.img, artist_table.a_detail
@@ -540,9 +543,10 @@ if (!isset($_SESSION["sessionuser"])) {
 
                     $updateResult = mysqli_query($connection, $query);
 
-                    if ($updateResult) {
+                    if ($updateResult) 
+                    {
                         while ($row = mysqli_fetch_assoc($updateResult)) {
-                            echo "<div class='biography-container' onclick='singer_click(\"" . $row['uname'] .",".$row['img']. "\")'>";
+                            echo "<div class='biography-container' onclick='singer_click(\"" . $row['uname'] . "\" , \"" . $row['img']. "\")    '>";
                             echo "<img class='biography-image' src='" . $row['img'] . "' alt='Singer Image'>";
                             echo "<h2 class='biography-info'>" . $row['uname'] . "</h2>";
                             echo "<div class='biography-history'>";
@@ -803,7 +807,10 @@ if (!isset($_SESSION["sessionuser"])) {
     <script src="song_play.js"></script>
     <script src="singer_area_click.js"></script>
     <script>
-
+function singer_click(name , path){
+    document.querySelector(".artist_section").style.zIndex="99";
+    document.getElementById("artist_img").src=path;
+}
     </script>
 </body>
 
