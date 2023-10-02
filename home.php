@@ -291,7 +291,7 @@ if (!isset($_SESSION["sessionuser"])) {
                 <?php
                 if ($_SESSION['role'] == 2) {
                     echo "<a id='your_music' style='color:crimson;font-weight:bold' onclick='show(\"your_music_class\")'>Your Music</a>";
-                    echo "<a id='music_upload' style='color:crimson;font-weight:bold' onclick='show(\"upload_song_class\")'>Upload Song</a>";                    
+                    echo "<a id='music_upload' style='color:crimson;font-weight:bold' onclick='show(\"upload_song_class\")'>Upload Song</a>";
                 }
                 ?>
             </div>
@@ -475,7 +475,7 @@ if (!isset($_SESSION["sessionuser"])) {
                     if ($updateResult) {
 
                         while ($row = mysqli_fetch_assoc($updateResult)) {
-                            echo "<div class='biography-container' onclick='singer_click(\"" . $row['uname'] . "\" , \"" . $row['img']. "\")'>";    //   "" ni andar pachu  "" use kerva ---------->      \"   "xyz"   "\
+                            echo "<div class='biography-container' onclick='singer_click(\"" . $row['uname'] . "\" , \"" . $row['img'] . "\")'>";    //   "" ni andar pachu  "" use kerva ---------->      \"   "xyz"   "\
                             echo "<img class='biography-image' src='" . $row['img'] . "' alt='Singer Image'>";
                             echo "<h2 class='biography-info'>" . $row['uname'] . "</h2>";
                             echo "<div class='biography-history'>";
@@ -529,11 +529,8 @@ if (!isset($_SESSION["sessionuser"])) {
                     <?php
                     $connection = mysqli_connect("localhost", "root", "", "demo");
 
-                    if ($connection) 
-                    {
-                    } 
-                    else 
-                    {
+                    if ($connection) {
+                    } else {
                         die("Not connected" . mysqli_connect_error());
                     }
                     $query = "SELECT demo_reg.uname, demo_reg.img, artist_table.a_detail
@@ -543,10 +540,9 @@ if (!isset($_SESSION["sessionuser"])) {
 
                     $updateResult = mysqli_query($connection, $query);
 
-                    if ($updateResult) 
-                    {
+                    if ($updateResult) {
                         while ($row = mysqli_fetch_assoc($updateResult)) {
-                            echo "<div class='biography-container' onclick='singer_click(\"" . $row['uname'] . "\" , \"" . $row['img']. "\")    '>";
+                            echo "<div class='biography-container' onclick='singer_click(\"" . $row['uname'] . "\" , \"" . $row['img'] . "\")    '>";
                             echo "<img class='biography-image' src='" . $row['img'] . "' alt='Singer Image'>";
                             echo "<h2 class='biography-info'>" . $row['uname'] . "</h2>";
                             echo "<div class='biography-history'>";
@@ -600,11 +596,8 @@ if (!isset($_SESSION["sessionuser"])) {
                     <?php
                     $connection = mysqli_connect("localhost", "root", "", "demo");
 
-                    if ($connection) 
-                    {
-                    } 
-                    else 
-                    {
+                    if ($connection) {
+                    } else {
                         die("Not connected" . mysqli_connect_error());
                     }
                     $query = "SELECT demo_reg.uname, demo_reg.img, artist_table.a_detail
@@ -614,10 +607,9 @@ if (!isset($_SESSION["sessionuser"])) {
 
                     $updateResult = mysqli_query($connection, $query);
 
-                    if ($updateResult) 
-                    {
+                    if ($updateResult) {
                         while ($row = mysqli_fetch_assoc($updateResult)) {
-                            echo "<div class='biography-container' onclick='singer_click(\"" . $row['uname'] . "\" , \"" . $row['img']. "\")    '>";
+                            echo "<div class='biography-container' onclick='singer_click(\"" . $row['uname'] . "\" , \"" . $row['img'] . "\")    '>";
                             echo "<img class='biography-image' src='" . $row['img'] . "' alt='Singer Image'>";
                             echo "<h2 class='biography-info'>" . $row['uname'] . "</h2>";
                             echo "<div class='biography-history'>";
@@ -672,11 +664,8 @@ if (!isset($_SESSION["sessionuser"])) {
                     <?php
                     $connection = mysqli_connect("localhost", "root", "", "demo");
 
-                    if ($connection) 
-                    {
-                    } 
-                    else 
-                    {
+                    if ($connection) {
+                    } else {
                         die("Not connected" . mysqli_connect_error());
                     }
                     $query = "SELECT demo_reg.uname, demo_reg.img, artist_table.a_detail
@@ -686,10 +675,9 @@ if (!isset($_SESSION["sessionuser"])) {
 
                     $updateResult = mysqli_query($connection, $query);
 
-                    if ($updateResult) 
-                    {
+                    if ($updateResult) {
                         while ($row = mysqli_fetch_assoc($updateResult)) {
-                            echo "<div class='biography-container' onclick='singer_click(\"" . $row['uname'] . "\" , \"" . $row['img']. "\")    '>";
+                            echo "<div class='biography-container' onclick='singer_click(\"" . $row['uname'] . "\" , \"" . $row['img'] . "\")    '>";
                             echo "<img class='biography-image' src='" . $row['img'] . "' alt='Singer Image'>";
                             echo "<h2 class='biography-info'>" . $row['uname'] . "</h2>";
                             echo "<div class='biography-history'>";
@@ -738,11 +726,47 @@ if (!isset($_SESSION["sessionuser"])) {
                 </section>
 
                 <section class="artist_section">
-                <img src="upload/art_bg_banner.jpg" style="height: auto; width: 100%; z-index: 2; position: absolute;" ></img>
-                
-                <img src="" alt="" id="artist_img" style="z-index: 3;">
-                <br>
-                    <h6 style="z-index:3" id="artist_click_name"> Artist Name</h6>    
+                    <img src="upload/art_bg_banner.jpg" style="height: auto; width: 100%; z-index: 2; position: absolute;"></img>
+                    <img src="" alt="" id="artist_img" style="z-index: 3;">
+                    <br>
+                    <h6 style="z-index:3" id="artist_click_name"> Artist Name </h6>
+
+                    <br>
+                    <br>
+
+                    <?php
+                    $connection = mysqli_connect("localhost", "root", "", "demo");
+
+                    if (!$connection) {
+                        die("Not connected" . mysqli_connect_error());
+                    }
+
+                    $query = "SELECT * FROM `song` WHERE `song_artist`= 'Arijit_singh'   ";
+                    $result = mysqli_query($connection, $query);
+
+                    if ($result) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $songFile = json_encode($row['song_file']);
+                            $songImage = json_encode($row['song_image']);
+                            $songName = json_encode($row['song_name']);
+                            $songLyrics = json_encode($row['song_lyrics']);
+                    
+                            echo "<div id='artist_song_div' onclick='singer_song_click($songFile, $songImage, $songName, $songLyrics)'>";
+                            echo "<div class='artist_song_div_manage' id='artist_song_div_img'>";
+                            echo "<img style='height:100%' src={$row['song_image']}>";
+                            echo "</div>";
+                            echo "<div class='artist_song_div_manage' id='artist_song_div_songname'>";
+                            echo "<h4 style='color: white;font-weight:lighter'>{$row['song_name']}</h4>";
+                            echo "</div>";
+                            echo "<div class='artist_song_div_manage' id='artist_song_div_artistname'>";
+                            echo "<h5 style='color: white; font-weight:lighter'>{$row['song_artist']}</h5>";
+                            echo "</div>";
+                            echo "</div>";
+                        }
+                    }
+                    
+                    ?>
+
                 </section>
 
                 <section class="upload_song_class" style="background-color: #0a0a0a;  color: white;">
@@ -872,8 +896,17 @@ function singer_click(name , path){
     document.querySelector(".artist_section").style.zIndex="99";
     document.getElementById("artist_img").src=path;
     document.getElementById("artist_click_name").innerHTML = name;
-    
 }
+
+        function singer_song_click(song , poster , name , lyrics)
+        {
+            document.getElementById("song").src = song;
+            document.getElementById("pbimg").src = poster;
+            document.getElementById("play").innerHTML = '<i class="fa-solid fa-play"></i>'; 
+            document.getElementById("song-name").innerHTML = name;
+            document.getElementById("lyrics_area").innerHTML = lyrics;
+
+        } 
     </script>
 </body>
 

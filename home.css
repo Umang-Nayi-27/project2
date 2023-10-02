@@ -241,8 +241,8 @@ li {
 }
 
 #playback div:nth-child(2) {
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
 }
 
 #playback div:hover {
@@ -375,6 +375,32 @@ li {
     width:39px;
     object-fit:cover;
     margin:3px 3px;
+}
+
+
+#artist_song_div {
+    width: 98%;
+    height: 70px;
+    display: grid;
+    grid-template-columns:1.5fr 3fr 3fr ;
+    grid-template-rows: 1fr;
+    padding: 5px;
+    background-color: black;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.artist_song_div_manage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 2px;
+    overflow: hidden;
+}
+
+#artist_song_div_img{
+    height: 100%;
+    width: 50%;
+    border-radius: 15px;
 }
 
 /* ---------------------------------------------------------- size ---------------------------------------------------------- */

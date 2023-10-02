@@ -12,7 +12,8 @@ song.onloadedmetadata = function () {
 
 // Add a click event listener to the play button
 play.addEventListener("click", function () {
-    if (song.paused) {
+
+    if (song.pause) {
         song.play();
         play.innerHTML = '<i class="fa-solid fa-pause"></i>';
     } else {
