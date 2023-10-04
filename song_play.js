@@ -12,8 +12,7 @@ song.onloadedmetadata = function () {
 
 // Add a click event listener to the play button
 play.addEventListener("click", function () {
-
-    if (song.pause) {
+    if (song.paused) {
         song.play();
         play.innerHTML = '<i class="fa-solid fa-pause"></i>';
     } else {
@@ -25,6 +24,10 @@ play.addEventListener("click", function () {
 // Add a 'timeupdate' event listener to continuously update the range input
 song.addEventListener("timeupdate", function () {
     range.value = song.currentTime;
+    range.max = song.duration;
+    if(song.currentTime == song.duration){
+        play.innerHTML = '<i class="fa-solid fa-play"></i>';
+    }
 });
 
 // Add an input event listener to the range input
