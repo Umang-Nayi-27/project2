@@ -221,7 +221,7 @@ if (!isset($_SESSION["sessionuser"])) {
             <center>
                 <br>
                 <h3 style="color: crimson;" id="song-name">Song Name</h3>
-                <p> Singer name</p>
+                <p id="playback_singer_name"> Singer name</p>
             </center>
             <br>
             <audio id="song">
@@ -719,6 +719,19 @@ if (!isset($_SESSION["sessionuser"])) {
                             $songImage = json_encode($row['song_image']);
                             $songName = json_encode($row['song_name']);
                             $songLyrics = json_encode($row['song_lyrics']);
+                            $songArtist = json_encode($row['song_artist']);
+
+                            echo "<div id='artist_song_div' onclick='singer_song_click($songFile, $songImage, $songName, $songLyrics , $songArtist)'>";
+                            echo "<div class='artist_song_div_manage' id='artist_song_div_img'>";
+                            echo "<img style='height:100%' src={$row['song_image']}>";                                                  //in this { } is used to insert values
+                            echo "</div>";
+                            echo "<div class='artist_song_div_manage' id='artist_song_div_songname'>";
+                            echo "<h6 style='color: white;font-weight:lighter'>{$row['song_name']}</h6>";                               //in this { } is used to insert values
+                            echo "</div>";
+                            echo "<div class='artist_song_div_manage' id='artist_song_div_artistname'>";
+                            echo "<h6 style='color: white; font-weight:lighter'>{$row['song_artist']}</h6>";                            //in this { } is used to insert values
+                            echo "</div>";
+                            echo "</div>";
                         }
                     }
                     ?>
@@ -742,8 +755,37 @@ if (!isset($_SESSION["sessionuser"])) {
                 </section>
 
                 <section class="your_music_class">
+                    <?php
+                    $connection = mysqli_connect("localhost", "root", "", "demo");
+                    if (!$connection) {
+                        die("Not connected" . mysqli_connect_error());
+                    }
+                    $name = $_SESSION['uname'];
+                    $query = "SELECT * FROM `song` WHERE 	`song_artist`= '$name' ";
+                    $result = mysqli_query($connection, $query);
 
-                    <h1>this is Your Music</h1>
+                    if ($result) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $songFile = json_encode($row['song_file']);
+                            $songImage = json_encode($row['song_image']);
+                            $songName = json_encode($row['song_name']);
+                            $songLyrics = json_encode($row['song_lyrics']);
+                            $songArtist = json_encode($row['song_artist']);
+
+                            echo "<div id='artist_song_div' onclick='singer_song_click($songFile, $songImage, $songName, $songLyrics , $songArtist)'>";
+                            echo "<div class='artist_song_div_manage' id='artist_song_div_img'>";
+                            echo "<img style='height:100%' src={$row['song_image']}>";                                                  //in this { } is used to insert values
+                            echo "</div>";
+                            echo "<div class='artist_song_div_manage' id='artist_song_div_songname'>";
+                            echo "<h6 style='color: white;font-weight:lighter'>{$row['song_name']}</h6>";                               //in this { } is used to insert values
+                            echo "</div>";
+                            echo "<div class='artist_song_div_manage' id='artist_song_div_artistname'>";
+                            echo "<h6 style='color: white; font-weight:lighter'>{$row['song_artist']}</h6>";                            //in this { } is used to insert values
+                            echo "</div>";
+                            echo "</div>";
+                        }
+                    }
+                    ?>
                 </section>
 
                 <section class="artist_section">
@@ -774,27 +816,43 @@ if (!isset($_SESSION["sessionuser"])) {
                         <!-- Song Language Dropdown -->
                         <label style="color: white; font-size: 16px;">Song Language:</label>
                         <select id="song_language" name="song_language" required style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;">
-                            <option value="hindi">Hindi</option>
-                            <option value="english">English</option>
-                            <option value="gujarati">Gujarati</option>
-                            <option value="korean">Korean</option>
+                            <?php
+
+                            $connection = mysqli_connect("localhost", "root", "", "demo");
+                            if (!$connection) {
+                                die("Not connected" . mysqli_connect_error());
+                            }
+
+                            $query = "SELECT `language` FROM `song_language`";
+                            $result = mysqli_query($connection, $query);
+
+                            if ($result) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    $language = json_encode($row['language']);
+
+                                    echo "<option value={$language}>{$language}</option>";
+                                }
+                            }
+                            ?>
                         </select>
 
                         <!-- Song Genre Dropdown -->
                         <label style="color: white; font-size: 16px;">Song Genre:</label>
                         <select id="song_genre" name="song_genre" required style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;">
-                            <option value="party">Party</option>
-                            <option value="dance">Dance</option>
-                            <option value="romantic">Romantic</option>
-                            <option value="bhakti">Bhakti</option>
-                            <option value="lofi">Lofi</option>
-                            <option value="other">Other</option>
+                            <?php
+
+                            $query = "SELECT * FROM `song_genre`";
+                            $result = mysqli_query($connection, $query);
+
+                            if ($result) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    $song_genre_name = json_encode($row['song_genre_name']);
+
+                                    echo "<option value={$song_genre_name}>{$song_genre_name}</option>";
+                                }
+                            }
+                            ?>
                         </select>
-
-                        <!-- Song Description -->
-                        <label style="color: white; font-size: 16px;">Song Description:</label>
-                        <textarea id="song_description" name="song_description" rows="4" style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;"></textarea>
-
                         <!-- Song Lyrics -->
                         <label style="color: white; font-size: 16px;">Song Lyrics:</label>
                         <textarea id="song_lyrics" name="song_lyrics" rows="6" style="background-color: #222; color: #777; border: 1px solid #777; padding: 5px; margin-bottom: 10px; font-size: 16px;"></textarea>
@@ -841,72 +899,9 @@ if (!isset($_SESSION["sessionuser"])) {
     <script src="update_profile.js"></script>
     <script src="song_play.js"></script>
     <script src="singer_area_click.js"></script>
+    <script src="singer_song_click.js"></script>
+    <script src="song_play_load.js"></script>
     <script>
-        function singer_click(name, path) {
-            $(".artist_section").css("zIndex", "99");
-            $("#artist_img").attr("src", path);
-            $("#artist_click_name").html(name);
-
-            event.preventDefault(); // Prevent the default link behavior
-            $.ajax({
-                type: "POST",
-                url: "get_songs.php", // Replace with your server-side script
-                data: {
-                    artist_name: name
-                },
-                dataType: "json",
-                success: function(response_from_php) {
-                    var songList = $("#songList");
-                    songList.empty(); // Clear existing songs
-
-                    $.each(response_from_php, function(index, song) {
-                        var songFile = song.song_file;
-                        var songImage = song.song_image;
-                        var songName = song.song_name;
-                        var songLyrics = song.song_lyrics;
-
-                        // Create HTML elements for each song using jQuery
-                        var songDiv = $("<div id='artist_song_div'></div>");
-                        songDiv.click(function() {
-                            singer_song_click(songFile, songImage, songName, songLyrics);
-                        });
-
-                        var imgDiv = $("<div class='artist_song_div_manage' id='artist_song_div_img'></div>");
-                        imgDiv.append("<img style='height:100%' src='" + songImage + "'>");
-
-                        var nameDiv = $("<div class='artist_song_div_manage' id='artist_song_div_songname'></div>");
-                        nameDiv.append("<h4 style='color: white;font-weight:lighter'>" + songName + "</h4>");
-
-                        var artistDiv = $("<div class='artist_song_div_manage' id='artist_song_div_artistname'></div>");
-                        artistDiv.append("<h5 style='color: white; font-weight:lighter'>" + name + "</h5>");
-
-                        // Append the inner divs to the outer div
-                        songDiv.append(imgDiv);
-                        songDiv.append(nameDiv);
-                        songDiv.append(artistDiv);
-
-                        // Append the entire song container to the songList div
-                        songList.append(songDiv);
-                    });
-                },
-                error: function(xhr, textStatus, errorThrown) {
-                    console.error("Error: " + errorThrown);
-                }
-            });
-
-
-        }
-
-
-        function singer_song_click(song, poster, name, lyrics) {
-            document.getElementById("song").src = song;
-            document.getElementById("pbimg").src = poster;
-            document.getElementById("song-name").innerHTML = name;
-            document.getElementById("lyrics_area").innerHTML = lyrics;
-            document.getElementById("song").play();
-            document.getElementById("play").innerHTML = '<i class="fa-solid fa-pause"></i>';
-
-        }
     </script>
 </body>
 
